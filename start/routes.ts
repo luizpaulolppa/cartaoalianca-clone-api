@@ -24,4 +24,5 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.get('posts', 'PostsController.index')
+Route.post('/users', 'UsersController.create')
+Route.get('/users/:id', 'UsersController.show')
