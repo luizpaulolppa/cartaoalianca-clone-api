@@ -18,3 +18,14 @@ services:
       - 3333:3333
     expose:
       - 3333
+    links:
+      - db
+
+  db:
+    image: postgres:12.1
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: cartao_alianca_dev
+    ports: ['5432:5432']
+    expose: ['5432']
