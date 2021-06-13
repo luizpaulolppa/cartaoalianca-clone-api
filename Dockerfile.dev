@@ -1,0 +1,13 @@
+FROM node
+
+RUN mkdir -p /webapi
+
+COPY . /webapi
+
+WORKDIR /webapi
+
+RUN yarn install --silent
+
+EXPOSE 3333
+
+CMD ["yarn", "dev"]
